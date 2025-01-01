@@ -1,7 +1,7 @@
 # 🔖 Bookmarko - Smart Bookmark Manager
 
 <div align="center">
-  <img src="icon.png" alt="Bookmarko Logo" width="128" height="128">
+  <img src="src/assets/icon.png" alt="Bookmarko Logo" width="128" height="128">
   <br>
   <strong>A beautiful and intuitive Chrome extension for managing your bookmarks in style</strong>
 </div>
