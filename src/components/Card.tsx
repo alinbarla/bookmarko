@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import { toast } from 'react-hot-toast';
+import { getFaviconUrl } from '../utils/favicon';
 
 interface CardProps {
   id: string;
@@ -130,7 +131,18 @@ const Card: React.FC<CardProps> = ({
             <div>
               <div className="flex justify-between items-start gap-4">
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-lg font-bold text-dark-text mb-1 truncate">{title}</h3>
+                  <div className="flex items-center gap-2 mb-1">
+                    <img 
+                      src={getFaviconUrl(url)} 
+                      alt=""
+                      className="w-4 h-4 object-contain flex-shrink-0"
+                      onError={(e) => {
+                        // Fallback to default icon if favicon fails to load
+                        e.currentTarget.src = 'src/assets/favicon-32x32.png';
+                      }}
+                    />
+                    <h3 className="text-lg font-bold text-dark-text truncate">{title}</h3>
+                  </div>
                   <a
                     href={url}
                     target="_blank"
